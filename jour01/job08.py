@@ -46,4 +46,31 @@ class Livre:
     def rendre(self):
         if(not self.verification()):
             self.__disponible = True
-        
+            
+livre1 = Livre("diable boiteux","Alain",352)
+
+livre1.set_nombre_page(-12)
+
+print("le {} de {} est {}".format(
+    livre1.get_titre(),
+    livre1.get_auteur(),
+    "disponible" if(livre1.verification()) else "non Diponible"
+))
+
+livre1.emprunter()
+
+livre1.set_titre("Conte du graal")
+livre1.set_auteur("philipe alsace")
+print("le {} de {} est {}".format(
+    livre1.get_titre(),
+    livre1.get_auteur(),
+    "disponible" if(livre1.verification()) else "non Diponible"
+))
+
+livre1.rendre()
+
+print("le {} de {} est {}".format(
+    livre1.get_titre(),
+    livre1.get_auteur(),
+    "disponible" if(livre1.verification()) else "non Diponible"
+))
